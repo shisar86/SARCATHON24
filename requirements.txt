@@ -2,4 +2,3 @@ Flask
 faiss-cpu
 sentence-transformers
 gunicorn
-os
