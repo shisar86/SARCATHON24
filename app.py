@@ -2,6 +2,7 @@ import faiss
 import numpy as np
 from flask import Flask, request, jsonify
 from sentence_transformers import SentenceTransformer
+import os
 
 app = Flask(__name__)
 
@@ -163,4 +164,5 @@ def search_faq():
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use the PORT environment variable
+    app.run(host='0.0.0.0', port=port)
